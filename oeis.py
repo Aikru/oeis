@@ -341,6 +341,9 @@ def A008589(start: int = 0) -> Iterator[int]:
     return (n * 7 for n in count(start))
 
 
+
+
+
 @oeis
 def A000110() -> Iterator[int]:
     """Bell or exponential numbers.
@@ -508,6 +511,18 @@ def A007947(start: int = 0) -> Iterator[int]:
             yield 1
         else:
             yield reduce(lambda x, y: x * y, primefactors(i))
+
+
+@oeis
+def A007089(n) ->Iterator[int]:
+    """
+     	 Numbers in base 3.     """
+    quotient = n/3    
+    remainder = n%3
+    if quotient == 0: 
+        return ""
+    else:
+        return (int(quotient)) + str(int(remainder))   
 
 
 @oeis
