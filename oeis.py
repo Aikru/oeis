@@ -514,15 +514,13 @@ def A007947(start: int = 0) -> Iterator[int]:
 
 
 @oeis
-def A007089(n) ->Iterator[int]:
-    """
-     	 Numbers in base 3.     """
-    quotient = n/3    
-    remainder = n%3
-    if quotient == 0: 
-        return ""
-    else:
-        return (int(quotient)) + str(int(remainder))   
+def A007089() -> Iterator[int]:
+    """Numbers in base 3."""
+    def base3(n):
+        quotient = n // 3    
+        remainder = n%3
+        return int(str(quotient) + str(remainder)) 
+return int(base3(n) for n in count())
 
 
 @oeis
